@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- StringPrinter 클래스를 Bean으로 등록 -->
+	<bean id="stringPrinter" class="myspring.di.xml.StringPrinter" />
+	
+	<!-- ConsolePrinter 클래스를 Bean으로 등록 -->
+	<bean id="consolePrinter" class="myspring.di.xml.ConsolePrinter"  />
+	
+	<!-- <property name="firstName" -->
+	<!-- Hello 클래스를 Bean으로 등록 -->
+	<bean id="hello" class="myspring.di.xml.Hello" scope="singleton">
+		<property name="name" value="최성윤" />
+		<property name="printer" ref="stringPrinter" />
+	</bean>
+	
+</beans>
